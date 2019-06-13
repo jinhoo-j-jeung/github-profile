@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".ProfileViewActivity">
+
+  <include
+    layout="@layout/actionbar_user"
+    android:id="@+id/actionbar_user">
+  </include>
+
+  <FrameLayout
+    android:id="@+id/profileview_fl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@id/actionbar_user"
+    android:layout_above="@+id/profileview_navbar"
+    android:background="#CDDDFA"
+    android:animateLayoutChanges="true">
+  </FrameLayout>
+
+  <android.support.design.widget.BottomNavigationView
+    android:id="@+id/profileview_navbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    app:labelVisibilityMode="labeled"
+    app:itemIconTint="#FFFFFFFF"
+    app:itemBackground="@color/colorPrimary"
+    app:itemTextColor="#FFFFFFFF"
+    app:menu="@menu/other_user_navbar_items"/>
+
+</RelativeLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item
+    android:id="@+id/ou_navbar_profile"
+    android:icon="@drawable/ic_person_white_24dp"
+    android:title="Profile"/>
+  <item
+    android:id="@+id/ou_navbar_repo"
+    android:icon="@drawable/ic_folder_white_24dp"
+    android:title="Repo"/>
+  <item
+    android:id="@+id/ou_navbar_following"
+    android:icon="@drawable/ic_favorite_white_24dp"
+    android:title="Following"/>
+  <item
+    android:id="@+id/ou_navbar_follower"
+    android:icon="@drawable/ic_grade_white_24dp"
+    android:title="Followers"/>
+
+</menu>

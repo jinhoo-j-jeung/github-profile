@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:card_view="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <android.support.v7.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10sp"
+    card_view:cardCornerRadius="5sp"
+    card_view:cardElevation="2sp">
+
+    <RelativeLayout
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent">
+
+        <ImageView
+          android:id="@+id/pv_repo_profile_iv"
+          android:layout_width="75sp"
+          android:layout_height="75sp"
+          android:layout_centerVertical="true"/>
+
+        <RelativeLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_toEndOf="@id/pv_repo_profile_iv"
+          android:layout_marginStart="15sp"
+          android:layout_marginEnd="15sp">
+
+          <RelativeLayout
+            android:id="@+id/pv_repo_rl_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp">
+
+            <TextView
+              android:id="@+id/pv_repo_list_row_name"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerVertical="true"
+              android:textSize="20sp"
+              android:textStyle="bold"/>
+
+            <TextView
+              android:id="@+id/pv_repo_list_row_author"
+              android:layout_toEndOf="@id/pv_repo_list_row_name"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerVertical="true"
+              android:layout_marginStart="10sp"
+              android:textSize="15sp"/>
+
+          </RelativeLayout>
+
+          <TextView
+            android:id="@+id/pv_repo_list_row_description"
+            android:layout_below="@id/pv_repo_rl_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"/>
+
+          <TextView
+            android:id="@+id/pv_repo_list_row_link"
+            android:autoLink="web"
+            android:layout_below="@id/pv_repo_list_row_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"/>
+
+        </RelativeLayout>
+      </RelativeLayout>
+
+  </android.support.v7.widget.CardView>
+
+</RelativeLayout>

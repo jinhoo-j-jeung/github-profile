@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/drawer_layout"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".MainActivity">
+
+  <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+      layout="@layout/actionbar_main"
+      android:id="@+id/actionbar_main">
+    </include>
+
+    <FrameLayout
+      android:id="@+id/main_fl"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_below="@id/actionbar_main"
+      android:layout_above="@+id/main_navbar"
+      android:background="#CDDDFA"
+      android:animateLayoutChanges="true">
+    </FrameLayout>
+
+    <android.support.design.widget.BottomNavigationView
+      android:id="@+id/main_navbar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      app:labelVisibilityMode="labeled"
+      app:itemIconTint="#FFFFFFFF"
+      app:itemBackground="@color/colorPrimary"
+      app:itemTextColor="#FFFFFFFF"
+      app:menu="@menu/navbar_items"/>
+  </RelativeLayout>
+
+  <android.support.design.widget.NavigationView
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="start">
+
+    <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_margin="10dp">
+    
+      <TextView
+        android:text="SEARCH"
+        android:id="@+id/drawer_title"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginBottom="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+      
+      <RadioGroup
+        android:id="@+id/drawer_rg1"
+        android:layout_below="@id/drawer_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+          android:id="@+id/search_user"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:checked="true"
+          android:text="User"
+          android:textSize="15sp"/>
+
+        <RadioButton
+          android:id="@+id/search_repo"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="10dp"
+          android:text="Repo"
+          android:textSize="15sp"/>
+      </RadioGroup>
+
+      <EditText
+        android:id="@+id/drawer_et"
+        android:layout_below="@id/drawer_rg1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="TYPE YOUR SEARCH QUERY"/>
+
+      <RelativeLayout
+        android:id="@+id/drawer_user_rl"
+        android:layout_below="@id/drawer_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:visibility="visible">
+
+        <RelativeLayout
+          android:id="@+id/drawer_user_rl2"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+          <TextView
+            android:id="@+id/drawer_user_sort_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SORT BY:"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:gravity="start"/>
+
+          <Switch
+            android:id="@+id/user_asc"
+            android:text="ASC"
+            android:textSize="15sp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:gravity="center"/>
+
+        </RelativeLayout>
+        <RadioGroup
+          android:id="@+id/drawer_user_rg1"
+          android:layout_below="@id/drawer_user_rl2"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal">
+
+          <RadioButton
+            android:id="@+id/sort_follower"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Followers"
+            android:textSize="15sp"/>
+
+          <RadioButton
+            android:id="@+id/sort_repo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Repos"
+            android:textSize="15sp"/>
+
+          <RadioButton
+            android:id="@+id/sort_none"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:checked="true"
+            android:text="None"
+            android:textSize="15sp"/>
+        </RadioGroup>
+
+      </RelativeLayout>
+
+      <RelativeLayout
+        android:id="@+id/drawer_repo_rl"
+        android:layout_below="@id/drawer_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible">
+
+        <RelativeLayout
+          android:id="@+id/drawer_repo_rl2"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+          <TextView
+            android:id="@+id/drawer_repo_sort_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SORT BY:"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:gravity="start"/>
+
+          <Switch
+            android:id="@+id/repo_asc"
+            android:text="ASC"
+            android:textSize="15sp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:gravity="center"/>
+
+        </RelativeLayout>
+        <RadioGroup
+          android:id="@+id/drawer_repo_rg1"
+          android:layout_below="@id/drawer_repo_rl2"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal">
+
+          <RadioButton
+            android:id="@+id/sort_star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stars"
+            android:textSize="15sp"/>
+
+          <RadioButton
+            android:id="@+id/sort_fork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Forks"
+            android:textSize="15sp"/>
+
+          <RadioButton
+            android:id="@+id/sort_none2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:checked="true"
+            android:text="None"
+            android:textSize="15sp"/>
+        </RadioGroup>
+      </RelativeLayout>
+
+      <Button
+        android:id="@+id/drawer_submit"
+        android:layout_below="@id/drawer_user_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SUBMIT"/>
+
+    </RelativeLayout>
+  </android.support.design.widget.NavigationView>
+
+</android.support.v4.widget.DrawerLayout>
